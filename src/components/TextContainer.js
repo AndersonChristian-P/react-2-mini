@@ -8,7 +8,7 @@ export default class TextContainer extends Component {
     };
   }
 
-  updateText(e) {
+  updateText = (e) => {
     this.setState({
       text: e.target.value,
     });
@@ -18,7 +18,7 @@ export default class TextContainer extends Component {
     return (
       <div className="textContainer">
         <textarea
-          // style={  }
+          style={{ color: this.props.color, fontSize: `${this.props.size}px`, fontFamily: this.props.family }} // this is JS hence the first set of {} then we input an object, so hence the second pair of {}
           onChange={this.updateText}
           value={this.state.text}
           placeholder="Start typing your thoughts here!"
